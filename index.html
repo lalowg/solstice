@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SOLSTICE — Journeys That Change You</title>
+<meta name="description" content="SOLSTICE designs slow, light-led journeys. Scroll from dawn in Cappadocia to dusk in the Atacama, filter twelve destinations by season, mood and region, and build your own day-by-day itinerary.">
+<meta name="theme-color" content="#1A1410">
+<link rel="canonical" href="https://solstice-woad-eight.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SOLSTICE">
+<meta property="og:title" content="SOLSTICE — Journeys That Change You">
+<meta property="og:description" content="Travel planned around the light. Five chapters from dawn to dusk, twelve destinations and an itinerary builder.">
+<meta property="og:url" content="https://solstice-woad-eight.vercel.app/">
+<meta property="og:image" content="https://solstice-woad-eight.vercel.app/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SOLSTICE — Journeys That Change You">
+<meta name="twitter:description" content="Travel planned around the light, from first light to last.">
+<meta name="twitter:image" content="https://solstice-woad-eight.vercel.app/og.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana&amp;family=Questrial&amp;display=swap">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.solsticeReady)document.documentElement.classList.remove('js');},3500);</script>
+<script type="module" src="main.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg class="defs" aria-hidden="true" focusable="false" width="0" height="0">
+  <defs>
+    <symbol id="mark" viewBox="0 0 190 40">
+      <path d="M6 22A11 11 0 0 1 28 22Z" fill="var(--mark-sun, #E8A15A)"/>
+      <path d="M12 23.6A11 11 0 0 0 34 23.6Z" fill="var(--mark-rose, #C9706A)" opacity=".9"/>
+      <path d="M0 22.8H40" stroke="currentColor" stroke-width="1.2"/>
+      <g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+        <path id="mark-s" d="M61 15.5C59.5 13.8 57.6 13 55.6 13C52.6 13 50.6 14.7 50.6 17.1C50.6 22.4 61.4 19.6 61.4 25C61.4 27.6 59.2 29 56 29C53.6 29 51.6 28 50 26.2"/>
+        <circle cx="77" cy="21" r="8"/>
+        <path d="M91 13V29H101"/>
+        <use href="#mark-s" transform="translate(57 0)"/>
+        <path d="M125 13H137M131 13V29"/>
+        <path d="M144 13V29"/>
+        <path d="M165.4 16.2A8 8 0 1 0 165.4 25.8"/>
+        <path d="M183 13H173V29H183M173 21H181"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="hdr" id="top">
+  <a class="hdr__brand" href="#journey" aria-label="SOLSTICE, back to the first chapter">
+    <svg viewBox="0 0 190 40" aria-hidden="true" focusable="false"><use href="#mark"/></svg>
+  </a>
+  <nav class="hdr__nav" id="site-nav" aria-label="Primary">
+    <ul>
+      <li><a href="#journey">The day</a></li>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#chart">Chart of light</a></li>
+      <li><a href="#itinerary">Itinerary <span class="count-badge" data-count>0</span></a></li>
+      <li><a href="#ethos">How we travel</a></li>
+      <li><a href="#year">The year</a></li>
+      <li class="hdr__cta-li"><a class="hdr__cta" href="#enquire">Plan a journey</a></li>
+    </ul>
+  </nav>
+  <button class="hdr__menu" type="button" aria-expanded="false" aria-controls="site-nav">
+    <span class="hdr__menu-sun" aria-hidden="true"></span><span class="hdr__menu-label">Menu</span>
+  </button>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- 00 · The day: scroll-driven chapters from dawn to dusk -->
+  <section id="journey" class="journey" aria-labelledby="hero-title">
+    <div class="stage" id="stage">
+      <svg class="stage__back" id="stage-back" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop id="sky0" offset="0" stop-color="#3a2838"/>
+            <stop id="sky1" offset=".5" stop-color="#a65a5e"/>
+            <stop id="sky2" offset=".64" stop-color="#f0b48a"/>
+          </linearGradient>
+          <radialGradient id="sunGlow">
+            <stop id="glow0" offset="0" stop-color="#f6c79a" stop-opacity=".75"/>
+            <stop id="glow1" offset=".35" stop-color="#f6c79a" stop-opacity=".22"/>
+            <stop offset="1" stop-color="#f6c79a" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="hazeGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop id="haze0" offset="0" stop-color="#f0b48a" stop-opacity="0"/>
+            <stop id="haze1" offset="1" stop-color="#f0b48a" stop-opacity=".55"/>
+          </linearGradient>
+          <linearGradient id="mistGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#F2E6D8" stop-opacity="0"/>
+            <stop offset=".5" stop-color="#F2E6D8" stop-opacity=".35"/>
+            <stop offset="1" stop-color="#F2E6D8" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="cabinShade" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#1A1410" stop-opacity="0"/>
+            <stop offset="1" stop-color="#1A1410" stop-opacity=".45"/>
+          </linearGradient>
+          <linearGradient id="waterShade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1A1410" stop-opacity="0"/>
+            <stop offset="1" stop-color="#1A1410" stop-opacity=".5"/>
+          </linearGradient>
+          <radialGradient id="fireGlow">
+            <stop offset="0" stop-color="#ffb35c" stop-opacity=".9"/>
+            <stop offset="1" stop-color="#ff7a2e" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect class="sky" width="1600" height="1000" fill="url(#skyGrad)"/>
+        <g id="stars" class="stars"></g>
+        <g id="sun" class="sun" transform="translate(800 600)">
+          <circle r="320" fill="url(#sunGlow)"/>
+          <circle id="sun-disc" r="40" fill="#f6c79a"/>
+        </g>
+        <g id="scenes-back">
+          <path class="fallback-hills" d="M0 700C200 610 380 640 560 600S900 520 1080 590 1400 560 1600 620V1000H0Z" fill="#5b3a3c"/>
+          <path class="fallback-hills" d="M0 820C260 740 520 790 760 760S1240 700 1600 780V1000H0Z" fill="#2a1d1a"/>
+        </g>
+      </svg>
+
+      <div class="titles" aria-hidden="true">
+        <p class="title" data-i="0" style="--len:10">Cappadocia</p>
+        <p class="title" data-i="1" style="--len:5">Douro</p>
+        <p class="title" data-i="2" style="--len:8">Wadi Rum</p>
+        <p class="title" data-i="3" style="--len:7">Lofoten</p>
+        <p class="title" data-i="4" style="--len:7">Atacama</p>
+      </div>
+
+      <svg class="stage__front" id="stage-front" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+        <g id="scenes-front"></g>
+      </svg>
+      <div class="stage__shade" aria-hidden="true"></div>
+      <div class="stage__grain" aria-hidden="true"></div>
+
+      <div class="intro">
+        <p class="eyebrow">Solstice · Journeys from first light to last</p>
+        <h1 id="hero-title">Journeys that <em>change you.</em></h1>
+        <p class="intro__lede">We plan travel around the light, not the landmarks. Scroll through one long day, from dawn over Cappadocia to nightfall in the Atacama.</p>
+      </div>
+
+      <ol class="cards" id="cards">
+        <li class="card" data-i="0">
+          <p class="card__k"><span class="card__no">I</span> Dawn <span class="card__clock">05:20</span></p>
+          <h2 class="card__name">Cappadocia, <span>Türkiye</span></h2>
+          <p class="card__coords">38.6° N · 34.8° E</p>
+          <p class="card__text">Before sunrise the baskets are already warm. You lift off with the first light and drift over valleys of soft volcanic stone while the chimneys turn from blue to rose.</p>
+          <dl class="card__meta"><div><dt>Best</dt><dd>Apr–Jun, Sep–Oct</dd></div><div><dt>Nights</dt><dd>5</dd></div><div><dt>From</dt><dd>$3,800<small> pp · illustrative</small></dd></div></dl>
+          <div class="card__actions"><button class="btn btn--sun" type="button" data-add="cappadocia">Add 3 days</button><a class="btn btn--line" href="#dest-cappadocia">The journey</a></div>
+        </li>
+        <li class="card" data-i="1">
+          <p class="card__k"><span class="card__no">II</span> Morning <span class="card__clock">08:40</span></p>
+          <h2 class="card__name">Douro Valley, <span>Portugal</span></h2>
+          <p class="card__coords">41.2° N · 7.8° W</p>
+          <p class="card__text">Mist lifts off the river and the terraces appear one step at a time, cut into the schist by hand over centuries. Breakfast on a quinta veranda, then the slow climb through the vines.</p>
+          <dl class="card__meta"><div><dt>Best</dt><dd>Apr–Jun, Sep–Oct</dd></div><div><dt>Nights</dt><dd>6</dd></div><div><dt>From</dt><dd>$3,900<small> pp · illustrative</small></dd></div></dl>
+          <div class="card__actions"><button class="btn btn--sun" type="button" data-add="douro">Add 3 days</button><a class="btn btn--line" href="#dest-douro">The journey</a></div>
+        </li>
+        <li class="card" data-i="2">
+          <p class="card__k"><span class="card__no">III</span> Noon <span class="card__clock">12:30</span></p>
+          <h2 class="card__name">Wadi Rum, <span>Jordan</span></h2>
+          <p class="card__coords">29.6° N · 35.4° E</p>
+          <p class="card__text">At midday the desert goes quiet. We wait out the heat in the shade of a Bedouin camp, then walk the red sand as the sandstone towers begin to throw their long afternoon shadows.</p>
+          <dl class="card__meta"><div><dt>Best</dt><dd>Mar–Apr, Oct–Nov</dd></div><div><dt>Nights</dt><dd>5</dd></div><div><dt>From</dt><dd>$3,400<small> pp · illustrative</small></dd></div></dl>
+          <div class="card__actions"><button class="btn btn--sun" type="button" data-add="wadirum">Add 3 days</button><a class="btn btn--line" href="#dest-wadirum">The journey</a></div>
+        </li>
+        <li class="card" data-i="3">
+          <p class="card__k"><span class="card__no">IV</span> Golden hour <span class="card__clock">18:10</span></p>
+          <h2 class="card__name">Lofoten, <span>Norway</span></h2>
+          <p class="card__coords">68.2° N · 13.6° E</p>
+          <p class="card__text">In June the sun never sets here, so the golden hour simply keeps going. Granite peaks rise straight from the sea, and the red fishermen’s cabins glow on their stilts until morning.</p>
+          <dl class="card__meta"><div><dt>Best</dt><dd>Jun–Aug</dd></div><div><dt>Nights</dt><dd>7</dd></div><div><dt>From</dt><dd>$5,200<small> pp · illustrative</small></dd></div></dl>
+          <div class="card__actions"><button class="btn btn--sun" type="button" data-add="lofoten">Add 3 days</button><a class="btn btn--line" href="#dest-lofoten">The journey</a></div>
+        </li>
+        <li class="card" data-i="4">
+          <p class="card__k"><span class="card__no">V</span> Dusk <span class="card__clock">21:40</span></p>
+          <h2 class="card__name">Atacama, <span>Chile</span></h2>
+          <p class="card__coords">22.9° S · 68.2° W</p>
+          <p class="card__text">The salt flat turns into a mirror at blue hour, flamingos stand in their own reflections, and then the stars arrive: some of the clearest night skies on Earth, high in the dry Andes.</p>
+          <dl class="card__meta"><div><dt>Best</dt><dd>Mar–May, Sep–Nov</dd></div><div><dt>Nights</dt><dd>6</dd></div><div><dt>From</dt><dd>$4,600<small> pp · illustrative</small></dd></div></dl>
+          <div class="card__actions"><button class="btn btn--sun" type="button" data-add="atacama">Add 3 days</button><a class="btn btn--line" href="#dest-atacama">The journey</a></div>
+        </li>
+      </ol>
+
+      <nav class="dayline" aria-label="Chapters of the day">
+        <p class="dayline__clock"><span class="visually-hidden">Time of day: </span><span id="clock">05:20</span></p>
+        <div class="dayline__track">
+          <span class="dayline__fill" id="day-fill" aria-hidden="true"></span>
+          <span class="dayline__sun" id="day-sun" aria-hidden="true"></span>
+          <ol class="dayline__ticks">
+            <li><button type="button" data-chapter="0" aria-current="step"><span>Dawn</span></button></li>
+            <li><button type="button" data-chapter="1"><span>Morning</span></button></li>
+            <li><button type="button" data-chapter="2"><span>Noon</span></button></li>
+            <li><button type="button" data-chapter="3"><span>Golden hour</span></button></li>
+            <li><button type="button" data-chapter="4"><span>Dusk</span></button></li>
+          </ol>
+        </div>
+      </nav>
+      <p class="scroll-cue" aria-hidden="true"><span class="scroll-cue__line"></span>Scroll to travel through the day</p>
+    </div>
+  </section>
+
+  <!-- 01 · Destinations -->
+  <section id="destinations" class="dest" aria-labelledby="dest-title">
+    <header class="sec-head">
+      <p class="eyebrow"><span class="eyebrow__no">01</span> Destinations</p>
+      <h2 id="dest-title" class="sweep">Twelve journeys, chosen for the way the light falls.</h2>
+      <p class="sec-head__lede sweep">Filter by when you can travel, the mood you are after and the part of the world you are drawn to. Every journey can be split into days and rearranged in your itinerary.</p>
+    </header>
+
+    <form class="filters" id="filters" aria-label="Filter destinations">
+      <fieldset class="filters__group">
+        <legend>When</legend>
+        <div class="chips" id="f-season"></div>
+      </fieldset>
+      <fieldset class="filters__group">
+        <legend>Mood</legend>
+        <div class="chips" id="f-mood"></div>
+      </fieldset>
+      <fieldset class="filters__group">
+        <legend>Region</legend>
+        <div class="chips" id="f-region"></div>
+      </fieldset>
+      <div class="filters__foot">
+        <p class="filters__count" id="dest-count" aria-live="polite">Showing all 12 journeys</p>
+        <button class="btn-text" type="reset" id="f-reset">Clear filters</button>
+      </div>
+    </form>
+
+    <ol class="dlist" id="dlist"></ol>
+    <p class="dlist__empty" id="dlist-empty" hidden>No journey matches all three choices. Try a different season or mood, or clear the filters.</p>
+    <p class="fine">Prices are per person, illustrative and shown for a sense of scale only. Availability is not real.</p>
+  </section>
+
+  <!-- 02 · Chart of light -->
+  <section id="chart" class="chart" aria-labelledby="chart-title">
+    <div class="chart__head">
+      <header class="sec-head sec-head--light">
+        <p class="eyebrow"><span class="eyebrow__no">02</span> A chart of light</p>
+        <h2 id="chart-title" class="sweep">Where the day lasts longest.</h2>
+        <p class="sec-head__lede sweep">Our map is drawn in daylight rather than borders. Each band shows roughly how many hours the sun stays up on the solstice you choose, and the route traces the order of your itinerary.</p>
+      </header>
+      <fieldset class="toggle" id="sol-toggle">
+        <legend class="visually-hidden">Choose a solstice</legend>
+        <label><input type="radio" name="sol" value="june" checked><span>21 June</span></label>
+        <label><input type="radio" name="sol" value="december"><span>21 December</span></label>
+      </fieldset>
+    </div>
+
+    <div class="chart__frame">
+      <div class="chart__scroll" id="chart-scroll" tabindex="0" role="region" aria-label="Stylised chart of light. Scroll horizontally on small screens.">
+        <svg class="chart__svg" id="chart-svg" viewBox="0 0 1000 389" role="group" aria-labelledby="chart-cap"></svg>
+      </div>
+      <aside class="chart__panel" id="chart-panel" aria-live="polite">
+        <p class="chart__panel-k">Select a place</p>
+        <p class="chart__panel-hint">Choose any point on the chart, or tab to it, to see its daylight on both solstices.</p>
+      </aside>
+    </div>
+    <p class="chart__cap" id="chart-cap">Stylised chart: coastlines simplified and not to scale. Daylight hours are approximate, calculated from latitude alone.</p>
+  </section>
+
+  <!-- 03 · Itinerary builder -->
+  <section id="itinerary" class="itin" aria-labelledby="itin-title">
+    <header class="sec-head">
+      <p class="eyebrow"><span class="eyebrow__no">03</span> Your itinerary</p>
+      <h2 id="itin-title" class="sweep">Compose your days. Change the order. Keep what moves you.</h2>
+      <p class="sec-head__lede sweep">Add a day from any journey, then drag the handle or use the arrows to change the order. Your draft stays in this browser tab until you close it.</p>
+    </header>
+
+    <div class="itin__grid">
+      <div class="itin__main">
+        <form class="adder" id="adder" novalidate>
+          <div class="field">
+            <label for="add-dest">Destination</label>
+            <select id="add-dest" name="dest"></select>
+          </div>
+          <div class="field">
+            <label for="add-day">Day</label>
+            <select id="add-day" name="day"></select>
+          </div>
+          <button class="btn btn--ink" type="submit">Add day</button>
+        </form>
+
+        <ol class="days" id="days" aria-describedby="days-help"></ol>
+        <p class="visually-hidden" id="days-help">Each day has a handle. Focus it and press the up or down arrow to move the day.</p>
+        <div class="days__empty" id="days-empty">
+          <svg viewBox="0 0 240 90" aria-hidden="true" focusable="false"><path d="M10 60H230" stroke="currentColor" stroke-width="1"/><path d="M95 60A25 25 0 0 1 145 60" fill="none" stroke="#9E4A45" stroke-width="1.4" stroke-dasharray="3 5"/><circle cx="120" cy="60" r="4" fill="#E8A15A"/></svg>
+          <p>Your journey is still below the horizon. Add days from a chapter above, from the destinations list or with the form.</p>
+          <button class="btn btn--ink" type="button" id="sample">Start with a sample journey</button>
+        </div>
+        <p class="visually-hidden" id="days-status" aria-live="polite"></p>
+      </div>
+
+      <aside class="summary" aria-labelledby="sum-title">
+        <h3 id="sum-title" class="summary__title">The shape of your journey</h3>
+        <div class="summary__strip" id="strip" aria-hidden="true"></div>
+        <dl class="summary__list">
+          <div><dt>Days</dt><dd id="sum-days">0</dd></div>
+          <div><dt>Places</dt><dd id="sum-places">0</dd></div>
+          <div><dt>Regions</dt><dd id="sum-regions">—</dd></div>
+          <div><dt>Daylight on <span id="sum-sol">21 June</span></dt><dd id="sum-light">—</dd></div>
+          <div class="summary__est"><dt>Illustrative estimate</dt><dd id="sum-est">—</dd></div>
+        </dl>
+        <p class="summary__note">Estimate is per person, before flights, and for illustration only.</p>
+        <div class="summary__actions">
+          <a class="btn btn--ink" href="#enquire">Send to a journey designer</a>
+          <button class="btn-text" type="button" id="clear-days" disabled>Clear itinerary</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 04 · How we travel -->
+  <section id="ethos" class="ethos" aria-labelledby="ethos-title">
+    <div class="ethos__sticky">
+      <svg class="dial" id="dial" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="dialDay" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E8A15A"/><stop offset="1" stop-color="#C9706A"/></linearGradient>
+        </defs>
+        <circle cx="200" cy="200" r="168" fill="none" stroke="rgba(242,230,216,.14)"/>
+        <path id="dial-day" d="" fill="none" stroke="url(#dialDay)" stroke-width="8" stroke-linecap="round"/>
+        <g id="dial-ticks"></g>
+        <g id="dial-hand"><line x1="200" y1="200" x2="200" y2="62" stroke="#F2E6D8" stroke-width="1.2"/><circle cx="200" cy="44" r="26" fill="#E8A15A" opacity=".16"/><circle cx="200" cy="44" r="12" fill="#E8A15A"/></g>
+        <circle cx="200" cy="200" r="3" fill="#F2E6D8"/>
+        <text id="dial-time" x="200" y="258" text-anchor="middle">05:00</text>
+        <text id="dial-label" x="200" y="284" text-anchor="middle">Sunrise 05:16 · Sunset 20:44</text>
+      </svg>
+      <p class="ethos__caption">The dial shows a June day at 41° N, the latitude of the Douro. Times are approximate.</p>
+    </div>
+    <div class="ethos__flow">
+      <header class="sec-head sec-head--light">
+        <p class="eyebrow"><span class="eyebrow__no">04</span> How we travel</p>
+        <h2 id="ethos-title" class="sweep">We plan around the light, not the landmarks.</h2>
+      </header>
+      <ol class="steps">
+        <li class="step" data-time="5"><p class="step__t">05:00</p><h3>Arrive before the light.</h3><p>Every Solstice day is timed around the sun. We get you to the viewpoint, the boat or the trailhead while it is still dark, so a place reveals itself slowly rather than all at once.</p></li>
+        <li class="step" data-time="13"><p class="step__t">13:00</p><h3>Leave the middle of the day empty.</h3><p>Midday light flattens everything, so we leave it unplanned: a long lunch, a swim, an hour in the shade. Nobody on a Solstice journey is hurried between sights at noon.</p></li>
+        <li class="step" data-time="19.5"><p class="step__t">19:30</p><h3>Stay for the last hour.</h3><p>The final hour of light is when places are most themselves. We never schedule a transfer through it, and every itinerary ends its days outdoors.</p></li>
+        <li class="step" data-time="23"><p class="step__t">23:00</p><h3>Let the night count, too.</h3><p>We choose lodges far enough from towns for the stars to show, and we build in nights with nothing booked except a blanket and a clear sky.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 05 · The year in light -->
+  <section id="year" class="year" aria-labelledby="year-title">
+    <header class="sec-head">
+      <p class="eyebrow"><span class="eyebrow__no">05</span> The year in light</p>
+      <h2 id="year-title" class="sweep">Every month has somewhere at its best.</h2>
+      <p class="sec-head__lede sweep">Choose a month to see which journeys are in season. A filled sun marks the months we recommend for each place.</p>
+    </header>
+    <div class="year__months" id="year-months" role="group" aria-label="Choose a month"></div>
+    <div class="year__wrap">
+      <table class="year__table" id="year-table">
+        <caption class="visually-hidden">Recommended months for each destination</caption>
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="year__summary" id="year-summary" aria-live="polite"></p>
+  </section>
+
+  <!-- 06 · Enquire -->
+  <section id="enquire" class="enquire" aria-labelledby="enq-title">
+    <div class="enquire__art" aria-hidden="true">
+      <svg viewBox="0 0 800 500" preserveAspectRatio="xMidYMax slice" focusable="false">
+        <defs><linearGradient id="enqSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A1410"/><stop offset=".62" stop-color="#4a2a30"/><stop offset="1" stop-color="#C9706A"/></linearGradient></defs>
+        <rect width="800" height="500" fill="url(#enqSky)"/>
+        <circle cx="560" cy="430" r="120" fill="#E8A15A" opacity=".12"/>
+        <circle cx="560" cy="430" r="46" fill="#E8A15A" opacity=".9"/>
+        <path d="M0 430C120 380 220 400 330 372S540 330 640 380 760 372 800 360V500H0Z" fill="#3a2324"/>
+        <path d="M0 470C160 440 300 462 420 444S660 420 800 452V500H0Z" fill="#1A1410"/>
+      </svg>
+    </div>
+    <div class="enquire__inner">
+      <header class="sec-head sec-head--light">
+        <p class="eyebrow"><span class="eyebrow__no">06</span> Plan a journey</p>
+        <h2 id="enq-title" class="sweep">Begin with a conversation.</h2>
+        <p class="sec-head__lede sweep">Tell us when you can travel and what you hope to feel. A journey designer would reply with a first sketch, timed to the light of the places you choose.</p>
+      </header>
+
+      <form class="form" id="enquiry" novalidate>
+        <div class="form__row">
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err">
+            <p class="field__err" id="f-name-err"></p>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-err">
+            <p class="field__err" id="f-email-err"></p>
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="field">
+            <label for="f-month">When would you like to travel?</label>
+            <select id="f-month" name="month" required aria-describedby="f-month-err"><option value="">Choose a month</option></select>
+            <p class="field__err" id="f-month-err"></p>
+          </div>
+          <div class="field">
+            <label for="f-people">Travellers</label>
+            <input id="f-people" name="people" type="number" inputmode="numeric" min="1" max="12" value="2" required aria-describedby="f-people-err">
+            <p class="field__err" id="f-people-err"></p>
+          </div>
+        </div>
+        <fieldset class="field field--set" aria-describedby="f-pace-err">
+          <legend>The pace you prefer</legend>
+          <div class="chips chips--form">
+            <label class="chip"><input type="radio" name="pace" value="unhurried"><span>Unhurried</span></label>
+            <label class="chip"><input type="radio" name="pace" value="balanced"><span>Balanced</span></label>
+            <label class="chip"><input type="radio" name="pace" value="full"><span>Full days</span></label>
+          </div>
+          <p class="field__err" id="f-pace-err"></p>
+        </fieldset>
+        <div class="field">
+          <label for="f-notes">What would make this journey matter to you? <span class="field__opt">Optional</span></label>
+          <textarea id="f-notes" name="notes" rows="4" maxlength="600" aria-describedby="f-notes-count"></textarea>
+          <p class="field__hint" id="f-notes-count">0 / 600</p>
+        </div>
+        <label class="check"><input type="checkbox" id="f-attach" name="attach"><span id="f-attach-label">Attach my itinerary</span></label>
+        <div class="form__foot">
+          <button class="btn btn--sun btn--lg" type="submit">Request a first sketch</button>
+          <p class="form__note">Portfolio demo: nothing you type here is sent anywhere.</p>
+        </div>
+        <div class="form__done" id="enq-done" tabindex="-1" hidden></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot__horizon" aria-hidden="true">
+    <svg viewBox="0 0 1600 260" preserveAspectRatio="none" focusable="false"><path d="M0 170C220 120 420 150 640 118S1080 70 1300 128 1500 140 1600 120V260H0Z" fill="#221a15"/><path d="M0 210C300 180 560 214 820 192S1320 170 1600 196V260H0Z" fill="#14100c"/></svg>
+  </div>
+  <div class="foot__inner">
+    <div class="foot__brand">
+      <svg class="foot__logo" viewBox="0 0 190 40" aria-hidden="true" focusable="false"><use href="#mark"/></svg>
+      <p class="foot__line">Journeys that change you.</p>
+    </div>
+    <nav class="foot__nav" aria-label="Footer">
+      <ul>
+        <li><a href="#journey">The day</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#chart">Chart of light</a></li>
+        <li><a href="#itinerary">Itinerary</a></li>
+        <li><a href="#ethos">How we travel</a></li>
+        <li><a href="#year">The year</a></li>
+        <li><a href="#enquire">Plan a journey</a></li>
+      </ul>
+    </nav>
+    <div class="credit">
+      <p class="credit__k">Credits</p>
+      <p class="credit__by">Designed &amp; built by <a href="https://www.linkedin.com/in/saadbashirmarketing/" target="_blank" rel="noopener" aria-label="Saad Bashir on LinkedIn (opens in a new tab)">Saad Bashir</a></p>
+      <p class="credit__note">Fictional concept brand — portfolio project.</p>
+      <a class="credit__more" href="https://saadbashirportfolio.vercel.app/websites.html">More work <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+  <p class="foot__fine">Prices, availability and itineraries are illustrative. Daylight figures are approximate. SOLSTICE is not a real travel company.</p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
